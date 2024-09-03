@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+    <h1 class="text-center">Blogs</h1>
+    <h3>{{ message }}</h3>
+    {% for blog in blogs %}
+        <div class="card mt-3 text-center">
+            <div class="card-body">
+                <a href="{% url 'blog_detail' blog.id %}"class="text-decoration-none btn btn-link text-primary font-weight-bold">{{blog.title}}</a>
+                <p>{{ blog.description }}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
